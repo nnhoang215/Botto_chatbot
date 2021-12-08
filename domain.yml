@@ -1,0 +1,48 @@
+version: "2.0"
+
+intents:
+  - complain
+  - about_offline_campus
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+responses:
+  utter_apology:
+  - text: "I'm sorry I couldn't help you. Please leave complaints so my developers can improve me!"
+  - text: "Botto is very sorry, that's why I'm Bot tồ, not Bot thông minh :("
+  - text: "Really do appreciate the honesty! I'll become better before you know it, I promise"
+
+  utter_covid_requirements:
+  - text: "Oh, are you fully vaccinated? Have you waited for 14 days after your second dose? \
+          Have you been in close contact with any F0 cases? If not then sure, you can come. \
+          RMIT misses you"
+
+  utter_greet:
+  - text: "Hey! How are you? My name is Botto, my friends call me Bot tồ. I can help you with anything \
+          about RMIT University. I can be better than Google at times :)"
+  - text: "G'day homie, how we doing? This is Botto -..-!"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
