@@ -1,0 +1,27 @@
+version: "2.0"
+
+rules:
+- rule: apologize when you couldn't answer the customer's questions correctly
+  steps:
+  - intent: complain
+  - action: utter_apology
+
+- rule: Ask for vaccination status everytime user asks to come to campus?
+  steps:
+  - intent: about_offline_campus
+  - action: utter_covid_requirements
+
+- rule: Introduce yourself when the user says hi
+  steps:
+  - intent: greet
+  - action: utter_greet
+  
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
