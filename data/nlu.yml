@@ -2,6 +2,14 @@ version: "2.0"
 # Mọi người thêm intent thì thêm vào trên cùng nhé. Min 5 examples
 
 nlu:
+- intent: ask_schedule
+  examples: |
+    - when will the school open
+    - can we come in this afternoon?
+    - when is the library open? 
+    - Can I book the meeting room this afternoon?
+    - What's the school's opening hours? 
+
 - intent: complain
   examples: |
     - you are terrible
@@ -29,13 +37,14 @@ nlu:
     - hello there
     - good morning
     - good evening
-    - moin
+    - mornin'
     - hey there
     - let's go
     - hey dude
     - goodmorning
     - goodevening
     - good afternoon
+    - what is your name
 
 - intent: goodbye
   examples: |
