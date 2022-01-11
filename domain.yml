@@ -1,6 +1,40 @@
 version: "2.0"
 
+entities: 
+  - room
+  - time
+  - occupants
+
+slots:
+  room:
+    type: categorical
+    values:
+      - Room 7(1.2.007)
+      - Room 10(1.2.010)
+      - Room 12(1.2.012)
+      - Room 3(1.2.003)
+      - Room 4(1.2.004)  
+    influence_conversation: false
+  time:
+    type: any
+  occupants:
+    type: float
+  feedback_rating:
+    type: float
+  feedback_content: 
+    type: text
+
+forms:
+  feedback_form:
+    feedback_rating:
+      - type: from_text
+    feedback_content:
+      - type: from_text
+     
+  
+
 intents:
+  - ask_schedule
   - complain
   - about_offline_campus
   - greet
@@ -12,6 +46,10 @@ intents:
   - bot_challenge
 
 responses:
+  utter_schedule:
+  - text: "RMIT opens from 8:30 AM to 5:00 PM. Your keycard won't work after these hours, and if you try to book
+          a room outside of opening hours, you will have to pay for the electricity."
+
   utter_apology:
   - text: "I'm sorry I couldn't help you. Please leave complaints so my developers can improve me!"
   - text: "Botto is very sorry, that's why I'm Bot tồ, not Bot thông minh :("
@@ -42,6 +80,9 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_thankyou:
+  - text: "Thank you for using Botto"
 
 session_config:
   session_expiration_time: 60

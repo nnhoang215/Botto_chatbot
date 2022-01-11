@@ -25,3 +25,25 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Show opening hours when asked
+  steps:
+  - intent: ask_schedule
+  - action: utter_schedule
+
+- rule: Activate form
+  steps:
+  - intent: complain
+  - action: feedback_form
+  - active_loop: feedback_form
+
+- rule: Submit form
+  condition:
+  - active_loop: feedback_form
+  steps:
+  - action: feedback_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_thankyou
+
